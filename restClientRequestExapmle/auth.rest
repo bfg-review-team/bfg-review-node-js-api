@@ -1,0 +1,32 @@
+GET  http://localhost:5000 HTTP/1.1
+content-type: application/json
+
+###
+
+POST  http://localhost:5000/login HTTP/1.1
+content-type: application/json
+
+{
+    "Email": "oaktan@gmail.com",
+    "Pasword":"1234"
+}
+
+###
+
+POST http://localhost:5000/user HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUwNTg5LCJleHAiOjE2MTEzNTUzODl9.7yC-Be1d_Oo4fWdPMFKfilqPW8NrqhnDgDAUggvSp3U
+content-type: application/json
+
+{
+    "Name":"Baris",
+    "Surname":"Arslan",
+    "Email": "barslan@gmail.com",
+    "UserName":"baris", 
+    "Pasword": "baris123"
+}
+
+###
+
+GET http://localhost:5000/user HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUwNTg5LCJleHAiOjE2MTEzNTUzODl9.7yC-Be1d_Oo4fWdPMFKfilqPW8NrqhnDgDAUggvSp3U
+content-type: application/json
