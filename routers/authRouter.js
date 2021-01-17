@@ -13,6 +13,7 @@ router.post("/login", async (req, res) => {
 });
 
   //delete user["Pasword"]
+  //Yorumsatirideneme
 
     if (!user) {
     res.status(400).json("Kulşlanıcı adı ya da şifre adı kontrol ediniz");
