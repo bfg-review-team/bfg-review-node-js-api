@@ -44,4 +44,11 @@ router.get("/user/movies", verifyToken, async (req, res) => {
     res.json(results);
 });
 
+router.post("/user/movies", verifyToken, async (req, res) => {
+    const results = await userTrancactions.addUserMovie(
+        Object.assign(req.body)
+    );
+    res.json(results);
+});
+
 module.exports = router;

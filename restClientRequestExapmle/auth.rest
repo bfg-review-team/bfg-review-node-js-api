@@ -18,11 +18,11 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUw
 content-type: application/json
 
 {
-    "Name":"Baris",
-    "Surname":"Arslan",
-    "Email": "barslan@gmail.com",
-    "UserName":"baris", 
-    "Pasword": "baris123"
+    "Name":"apicalldeneme",
+    "Surname":"apicalldeneme",
+    "Email": "apicalldeneme@gmail.com",
+    "UserName":"apicalldeneme", 
+    "Pasword": "apicalldeneme123"
 }
 
 ###
@@ -39,4 +39,24 @@ content-type: application/json
 
 {
     "personId":10
+}
+
+###
+
+POST  http://localhost:5000/user/movies HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUwNTg5LCJleHAiOjE2MTEzNTUzODl9.7yC-Be1d_Oo4fWdPMFKfilqPW8NrqhnDgDAUggvSp3U
+content-type: application/json
+
+{
+    "personId":25,
+    "tmdbid":37165,
+    "title": "The Truman Show",
+    "director":"Peter Weir",
+    "relasedate": "2000-02-02", 
+    "story": 1,
+    "acting": 1,
+    "editing": 1,
+    "music": 2,
+    "datewatch": "2000-02-03",
+    "review": "apicalldeneme123"
 }

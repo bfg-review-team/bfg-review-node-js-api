@@ -10,31 +10,31 @@ class UserTrancactions extends FadabHelper{
         return queryAsync("CALL GetAllUsers()")
     }
     addUser(values) {
-        console.log("uloo", values.Name);
-        const body_data = {
-            Name: values.Name,
-            Surname: values.Surname,
-            Email: values.Email,
-            UserName : values.UserName,
-            Pasword: values.Pasword
-        }
-        
-        insertAsync('Person', body_data)
-        .then(function (info) {
-            console.log('New User Entered!', info);
-            return true;
-        })
-        .catch(function (err) {
-            console.log('Error creating new user, mysql error:', err.message);
-            return false;
-        });
-        
-            // `insert into Person (Name,Surname,Email,UserName,Pasword,TMDB_UserName,TMDB_Pasword) VALUES 
-            // (${values.Name}, ${values.Surname}, ${values.Email},${values.UserName},${values.Pasword},${values.TMDB_UserName},${values.TMDB_Pasword} )`    
+        const body_data = [values.Name,values.Surname,values.Email,values.UserName,values.Pasword]
+        console.log('CallAddNewUser!')
+        return queryAsync(`CALL AddNewUser(?,?,?,?,?)`,body_data)   
     }
     getAllUserMovies(value) {
         console.log('CallGetallusermovies!')
         return queryAsync(`CALL GetUserMovies(?)`,value.personId)
+    }
+    addUserMovie(values) {
+        const body_data = [
+            values.personId,
+            values.tmdbid,
+            values.title,
+            values.director,
+            values.relasedate,
+            values.story,
+            values.acting,
+            values.editing,
+            values.music,
+            values.datewatch,
+            values.review
+        ]
+        console.log(body_data)
+        console.log('CallAddUserMovie!')
+        return queryAsync(`CALL AddUserMovie(?,?,?,?,?,?,?,?,?,?,?)`,body_data)   
     }
 }
 
