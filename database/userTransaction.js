@@ -32,6 +32,10 @@ class UserTrancactions extends FadabHelper{
             // `insert into Person (Name,Surname,Email,UserName,Pasword,TMDB_UserName,TMDB_Pasword) VALUES 
             // (${values.Name}, ${values.Surname}, ${values.Email},${values.UserName},${values.Pasword},${values.TMDB_UserName},${values.TMDB_Pasword} )`    
     }
+    getAllUserMovies(value) {
+        console.log('CallGetallusermovies!')
+        return queryAsync(`CALL GetUserMovies(?)`,value.personId)
+    }
 }
 
 module.exports = UserTrancactions;
