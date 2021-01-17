@@ -9,6 +9,11 @@ class UserTrancactions extends FadabHelper{
         console.log('CallGetallusers!')
         return queryAsync("CALL GetAllUsers()")
     }
+    getUser(values) {
+        const body_data = [values.UserName,values.Pasword]
+        console.log('Call Getuser!')
+        return queryAsync(`CALL GetUser(?,?)`,body_data)
+    }
     addUser(values) {
         const body_data = [values.Name,values.Surname,values.Email,values.UserName,values.Pasword]
         console.log('CallAddNewUser!')

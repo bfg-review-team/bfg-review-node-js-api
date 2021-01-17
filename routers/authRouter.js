@@ -26,7 +26,9 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/user", verifyToken, async (req, res) => {
-    const users = await userTrancactions.getAllUser();
+    const users = await userTrancactions.getUser(
+        Object.assign(req.body)
+    );
     res.json(users);
 });
 
