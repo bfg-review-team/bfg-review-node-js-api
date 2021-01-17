@@ -37,4 +37,9 @@ router.post("/user", verifyToken, async (req, res) => {
     res.json(users);
 });
 
+router.get("/user/movies", verifyToken, async (req, res) => {
+    const users = await userTrancactions.getAllUser();
+    res.json(users);
+});
+
 module.exports = router;
