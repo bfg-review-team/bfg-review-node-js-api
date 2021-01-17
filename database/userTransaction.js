@@ -12,7 +12,7 @@ class UserTrancactions extends FadabHelper{
     getUser(values) {
         const body_data = [values.UserName,values.Pasword]
         console.log('Call Getuser!')
-        return queryAsync(`CALL GetUser(?,?)`,body_data)
+        return queryAsync("Select * from vwUser Where UserName= ? And Pasword = ? ",body_data)
     }
     addUser(values) {
         const body_data = [values.Name,values.Surname,values.Email,values.UserName,values.Pasword]

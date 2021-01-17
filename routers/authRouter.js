@@ -27,7 +27,7 @@ router.post("/login", async (req, res) => {
 
 router.get("/user", verifyToken, async (req, res) => {
     const users = await userTrancactions.getUser(
-        Object.assign(req.body)
+       req.body
     );
     res.json(users);
 });
@@ -43,7 +43,7 @@ router.get("/user/movies", verifyToken, async (req, res) => {
     const results = await userTrancactions.getAllUserMovies(
         Object.assign(req.body)
     );
-    res.json(results);
+    res.json(results[0]);
 });
 
 router.post("/user/movies", verifyToken, async (req, res) => {
