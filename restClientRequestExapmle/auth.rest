@@ -65,3 +65,31 @@ content-type: application/json
     "datewatch": "2000-02-03",
     "review": "apicalldeneme123"
 }
+
+###
+
+POST http://localhost:5000/user/delete HTTP/1.1 HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUwNTg5LCJleHAiOjE2MTEzNTUzODl9.7yC-Be1d_Oo4fWdPMFKfilqPW8NrqhnDgDAUggvSp3U
+content-type: application/json
+
+{
+    "UserName":"cetiner"   ,
+    "Email": "cetiner@gmail.com"
+}
+
+###
+
+POST http://localhost:5000/user/update HTTP/1.1 HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUwNTg5LCJleHAiOjE2MTEzNTUzODl9.7yC-Be1d_Oo4fWdPMFKfilqPW8NrqhnDgDAUggvSp3U
+content-type: application/json
+
+{
+    "personId" : "11",
+    "Email": "arslan123@gmail.com"
+}
+
+###
+
+GET http://localhost:5000/user/all/users HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUwNTg5LCJleHAiOjE2MTEzNTUzODl9.7yC-Be1d_Oo4fWdPMFKfilqPW8NrqhnDgDAUggvSp3U
+content-type: application/json

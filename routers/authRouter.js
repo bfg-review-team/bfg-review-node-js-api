@@ -27,7 +27,7 @@ router.post("/login", async (req, res) => {
 
 router.get("/user", verifyToken, async (req, res) => {
     const users = await userTrancactions.getUser(
-       req.body
+    req.body
     );
     res.json(users);
 });
@@ -51,6 +51,27 @@ router.post("/user/movies", verifyToken, async (req, res) => {
         Object.assign(req.body)
     );
     res.json(results);
+});
+
+router.post("/user/delete", verifyToken, async (req, res) => {
+    const users = await userTrancactions.deleteUser(
+        req.body
+    );
+    res.json(users);
+});
+
+router.post("/user/update", verifyToken, async (req, res) => {
+    const users = await userTrancactions.updateUser(
+        req.body
+    );
+    res.json(users);
+});
+
+router.get("/user/all/users", verifyToken, async (req, res) => {
+    const users = await userTrancactions.getAllUser(
+    req.body
+    );
+    res.json(users[0]);
 });
 
 module.exports = router;
