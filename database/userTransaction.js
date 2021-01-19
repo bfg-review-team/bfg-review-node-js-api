@@ -25,17 +25,17 @@ class UserTrancactions extends FadabHelper{
         return queryAsync(`CALL DeleteUser (?,?)`,body_data)
     }
     updateUser(values) {
-        const body_data = [values.personId,values.Email]
+        const body_data = [values.PersonID,values.Email]
         console.log("Updating was successfully")
         return queryAsync(`CALL UpdateUser (?,?)`,body_data)
     }
     getAllUserMovies(value) {
         console.log('CallGetallusermovies!')
-        return queryAsync(`CALL GetUserMovies(?)`,value.personId)
+        return queryAsync(`CALL GetUserMovies(?)`,value.PersonID)
     }
     addUserMovie(values) {
         const body_data = [
-            values.personId,
+            values.PersonID,
             values.tmdbid,
             values.title,
             values.director,
