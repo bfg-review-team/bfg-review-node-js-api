@@ -43,7 +43,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUw
 content-type: application/json
 
 {
-    "personId":10
+    "PersonID":10
 }
 
 ###
@@ -53,7 +53,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUw
 content-type: application/json
 
 {
-    "personId":25,
+    "PersonID":25,
     "tmdbid":37165,
     "title": "The Truman Show",
     "director":"Peter Weir",
@@ -84,7 +84,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MSwiaWF0IjoxNjEwNzUw
 content-type: application/json
 
 {
-    "personId" : "11",
+    "PersonID" : "11",
     "Email": "arslan123@gmail.com"
 }
 
