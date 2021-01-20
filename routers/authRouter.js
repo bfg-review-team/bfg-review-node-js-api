@@ -53,6 +53,20 @@ router.post("/user/movies", verifyToken, async (req, res) => {
     res.json(results);
 });
 
+router.get("/user/series", verifyToken, async (req, res) => {
+    const results = await userTrancactions.getAllUserSeries(
+        Object.assign(req.body)
+    );
+    res.json(results[0]);
+});
+
+router.post("/user/series", verifyToken, async (req, res) => {
+    const results = await userTrancactions.addUserSeries(
+        Object.assign(req.body)
+    );
+    res.json(results);
+});
+
 router.post("/user/delete", verifyToken, async (req, res) => {
     const users = await userTrancactions.deleteUser(
         req.body
