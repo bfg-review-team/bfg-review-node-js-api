@@ -20,7 +20,7 @@ router.post("/login", async (req, res) => {
     return;
     }
     var token = jwt.sign({ PersonID: user.PersonID }, "secret", {
-    expiresIn: "7d",
+    expiresIn: "14d",
     });
     res.json({ user, token });
 });
