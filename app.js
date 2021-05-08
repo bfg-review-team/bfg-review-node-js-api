@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(require('./routers/authRouter'));
 
 app.get('/',(req,res) =>{
-    res.json("Auth Example Project");
+    res.json("BFG Review Project");
 });
 
 app.listen(PORT, () => {
