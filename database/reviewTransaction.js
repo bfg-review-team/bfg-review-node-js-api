@@ -19,6 +19,11 @@ class ReviewTrancactions extends FadabHelper{
         console.log('Call GetUserReview!')
         return queryAsync("SELECT * FROM Reviews WHERE UserId=? ",body_data)
     }
+    getMovieReviews(values) {
+        const body_data = [values.MovieId]
+        console.log('Call GetUserReview!')
+        return queryAsync("SELECT * FROM Reviews WHERE MovieId=? ",body_data)
+    }
     addReview(values) {
         const body_data = [
             values.UserId,

@@ -16,6 +16,13 @@ router.get("/reviewAll", verifyToken, async (req, res) => {
     res.json(results);
 });
 
+router.get("/movieReviewAll", verifyToken, async (req, res) => {
+    const results = await reviewTransactions.getMovieReviews(
+    req.body
+    );
+    res.json(results);
+});
+
 router.post("/review", verifyToken, async (req, res) => {
     const results = await reviewTransactions.addReview(
     req.body
