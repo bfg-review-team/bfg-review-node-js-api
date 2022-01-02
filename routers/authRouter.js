@@ -2,6 +2,8 @@ const UserTrancactions = require("../database/userTransaction");
 const ReviewTrancactions = require("../database/reviewTransaction")
 const MessageTrancactions = require("../database/messageTransaction")
 const DiscussionTrancactions = require("../database/discussionTransaction")
+const ListTrancactions = require("../database/listsTransaction")
+const listsTransactions = new ListTrancactions()
 const discussionTransactions = new DiscussionTrancactions()
 const userTrancactions = new UserTrancactions();
 const reviewTransactions = new ReviewTrancactions()
@@ -77,47 +79,11 @@ router.get("/user/discussions", verifyToken, async (req, res) => {
     );
     res.json(results);
 });
-/*
-router.post("/user/movies", verifyToken, async (req, res) => {
-    const results = await userTrancactions.addUserMovie(
+router.get("/user/lists", verifyToken, async (req, res) => {
+    const results = await listsTransactions.getUserLists(
         Object.assign(req.body)
     );
     res.json(results);
 });
-
-router.get("/user/series", verifyToken, async (req, res) => {
-    const results = await userTrancactions.getAllUserSeries(
-        Object.assign(req.body)
-    );
-    res.json(results[0]);
-});
-
-router.post("/user/series", verifyToken, async (req, res) => {
-    const results = await userTrancactions.addUserSeries(
-        Object.assign(req.body)
-    );
-    res.json(results);
-});
-
-router.post("/user/delete", verifyToken, async (req, res) => {
-    const users = await userTrancactions.deleteUser(
-        req.body
-    );
-    res.json(users);
-});
-
-router.post("/user/update", verifyToken, async (req, res) => {
-    const users = await userTrancactions.updateUser(
-        req.body
-    );
-    res.json(users);
-});
-
-router.get("/user/all/users", verifyToken, async (req, res) => {
-    const users = await userTrancactions.getAllUser(
-    req.body
-    );
-    res.json(users[0]);
-});*/
 
 module.exports = router;

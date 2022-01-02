@@ -1,0 +1,59 @@
+GET http://localhost:5000/listsAll HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+###
+
+GET  http://localhost:5000/list HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "Id": 1
+}
+###
+GET  http://localhost:5000/movieListsAll HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "MovieId": 1
+}
+
+###
+GET  http://localhost:5000/user/lists HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "UserId": 3
+}
+###
+POST http://localhost:5000/list HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "UserId": 3,
+    "ListType": 1,
+    "MovieId": 1
+}
+###
+PUT http://localhost:5000/list HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "UserId": 3,
+    "ListType": 1,
+    "MovieId": 10,
+    "Id":1
+}
+###
+DELETE http://localhost:5000/list HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "Id":1
+}
