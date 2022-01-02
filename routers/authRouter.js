@@ -16,7 +16,7 @@ router.post("/login", async (req, res) => {
     const user = await userTrancactions.findOneAsync({
     Email: req.body.Email,
     Password: req.body.Pasword,
-});
+}).catch();
     if (!user) {
     res.status(400).json("Kulşlanici adi ya da şifre ad kontrol ediniz");
     return;
