@@ -1,4 +1,4 @@
-const MessageTrancactions = require("../database/MessageTransaction")
+const MessageTrancactions = require("../database/messageTransaction")
 const MessageTransactions = new MessageTrancactions()
 const router  = require("express")();
 const verifyToken = require("../middleware/verifyToken");
