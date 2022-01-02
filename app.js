@@ -12,6 +12,7 @@ app.use(require('./routers/authRouter'));
 app.use(require('./routers/reviewRouter'));
 app.use(require('./routers/messageRouter'));
 app.use(require('./routers/discussionRouter'));
+app.use(require('./routers/listtypeRouter'));
 
 app.get('/',(req,res) =>{
     res.json("Auth Example Project2");
