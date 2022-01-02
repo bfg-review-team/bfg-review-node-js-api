@@ -10,5 +10,32 @@ router.get("/review", verifyToken, async (req, res) => {
     );
     res.json(users);
 });
+router.get("/reviewAll", verifyToken, async (req, res) => {
+    const users = await reviewTransactions.getAllReviews(
+    req.body
+    );
+    res.json(users);
+});
+
+router.post("/review", verifyToken, async (req, res) => {
+    const users = await reviewTransactions.addReview(
+    req.body
+    );
+    res.json(users);
+});
+
+router.put("/review", verifyToken, async (req, res) => {
+    const users = await reviewTransactions.updateReview(
+    req.body
+    );
+    res.json(users);
+});
+
+router.delete("/review", verifyToken, async (req, res) => {
+    const users = await reviewTransactions.deleteReview(
+    req.body
+    );
+    res.json(users);
+});
 
 module.exports = router

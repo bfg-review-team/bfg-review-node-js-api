@@ -16,11 +16,34 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0
 content-type: application/json
 
 {
-    "UserID": 3,
-    "Title":"Reviewdeneme",
+    "UserId": 1,
+    "Title":"deneme",
     "MovieId": 1,
-    "MessageText": "Reviewdeneme-Text",
+    "MessageText": "deneme-TextUPDATE",
     "ReviewLike": 1,
     "ReviewDislike": 3,
-    "CreatedDate": "01-01-2022"
+    "CreatedDate": "2022-01-01"
+}
+###
+PUT http://localhost:5000/review HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "Id":1,
+    "UserId": 1,
+    "Title":"denemeUPDATE",
+    "MovieId": 1,
+    "MessageText": "deneme-TextUPDATE",
+    "ReviewLike": 1,
+    "ReviewDislike": 3,
+    "CreatedDate": "2022-01-01"
+}
+###
+DELETE http://localhost:5000/review HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "Id":1
 }

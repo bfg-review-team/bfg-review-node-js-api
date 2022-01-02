@@ -20,19 +20,36 @@ class ReviewTrancactions extends FadabHelper{
         return queryAsync("SELECT * FROM Reviews WHERE UserId=? ",body_data)
     }
     addReview(values) {
-        const body_data = [values.UserName,values.Filmname,values.LastName,values.Email,values.Password,values.AvatarUrl]
+        const body_data = [
+            values.UserId,
+            values.Title,
+            values.MovieId,
+            values.MessageText,
+            values.ReviewLike,
+            values.ReviewDislike,
+            values.CreatedDate
+        ]
         console.log('CallAddNewReview!')
-        return queryAsync("INSERT INTO Users (UserName,FilmName,LastName,Email,Password,AvatarUrl) VALUES (?,?,?,?,?,?) ",body_data)   
+        return queryAsync("INSERT INTO Reviews (UserId,Title,MovieId,MessageText,ReviewLike,ReviewDislike,CreatedDate) VALUES (?,?,?,?,?,?,?) ",body_data)   
     }
     deleteReview(values) {
-        const body_data = [values.UserName,values.Email]
+        const body_data = [values.Id]
         console.log('Deleting This Review !')
-        return queryAsync("DELETE FROM Users WHERE UserName = ? and Email = ? ",body_data)
+        return queryAsync("DELETE FROM Reviews WHERE Id = ? ",body_data)
     }
     updateReview(values) {
-        const body_data = [values.UserName,values.Filmname,values.LastName,values.Email,values.Password,values.AvatarUrl,values.Id]
+        const body_data = [
+            values.UserId,
+            values.Title,
+            values.MovieId,
+            values.MessageText,
+            values.ReviewLike,
+            values.ReviewDislike,
+            values.CreatedDate,
+            values.Id
+        ]
         console.log("Updating review was successfully")
-        return queryAsync("UPDATE Users SET UserName = ?, FilmName = ?, LastName = ?, Email = ?, Password = ?, AvatarUrl = ? WHERE Id = ?",body_data)
+        return queryAsync("UPDATE Reviews SET UserId = ?, Title = ?, MovieId = ?, MessageText = ?, ReviewLike = ?, ReviewDislike = ?, CreatedDate = ? WHERE Id = ?",body_data)
     }
 }
 

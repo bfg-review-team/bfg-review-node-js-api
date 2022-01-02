@@ -15,7 +15,14 @@ class UserTrancactions extends FadabHelper{
         return queryAsync("SELECT * FROM Users WHERE UserName= ? And Password = ? ",body_data)
     }
     addUser(values) {
-        const body_data = [values.UserName,values.Filmname,values.LastName,values.Email,values.Password,values.AvatarUrl]
+        const body_data = [
+            values.UserName,
+            values.Filmname,
+            values.LastName,
+            values.Email,
+            values.Password,
+            values.AvatarUrl
+        ]
         console.log('CallAddNewUser!')
         return queryAsync("INSERT INTO Users (UserName,FilmName,LastName,Email,Password,AvatarUrl) VALUES (?,?,?,?,?,?) ",body_data)   
     }
