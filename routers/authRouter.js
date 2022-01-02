@@ -1,6 +1,8 @@
 const UserTrancactions = require("../database/userTransaction");
 const ReviewTrancactions = require("../database/reviewTransaction")
 const MessageTrancactions = require("../database/messageTransaction")
+const DiscussionTrancactions = require("../database/discussionTransaction")
+const discussionTransactions = new DiscussionTrancactions()
 const userTrancactions = new UserTrancactions();
 const reviewTransactions = new ReviewTrancactions()
 const messageTransactions = new MessageTrancactions()
@@ -65,6 +67,12 @@ router.get("/user/reviews", verifyToken, async (req, res) => {
 });
 router.get("/user/messages", verifyToken, async (req, res) => {
     const results = await messageTransactions.getUserMessages(
+        Object.assign(req.body)
+    );
+    res.json(results);
+});
+router.get("/user/discussions", verifyToken, async (req, res) => {
+    const results = await discussionTransactions.getUserDiscussions(
         Object.assign(req.body)
     );
     res.json(results);
