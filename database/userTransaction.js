@@ -29,7 +29,7 @@ class UserTrancactions extends FadabHelper{
         console.log("Updating was successfully")
         return queryAsync("UPDATE Users SET UserName = ?, FilmName = ?, LastName = ?, Email = ?, Password = ?, AvatarUrl = ? WHERE Id = ?",body_data)
     }
-    getAllUserMovies(value) {
+    /*getAllUserMovies(value) {
         console.log('CallGetallusermovies!')
         return queryAsync(`CALL GetUserMovies(?)`,value.PersonID)
     }
@@ -60,7 +60,7 @@ class UserTrancactions extends FadabHelper{
             values.PersonID,
             values.tmdbid,
             values.title,
-            values.producer,
+            values.producer, 
             values.relasedate,
             values.story,
             values.acting,
@@ -72,7 +72,7 @@ class UserTrancactions extends FadabHelper{
         console.log(body_data)
         console.log('CallAddUserMovie!')
         return queryAsync(`CALL AddUserSeries(?,?,?,?,?,?,?,?,?,?,?)`,body_data)   
-    }
+    }*/
 }
 
 module.exports = UserTrancactions;

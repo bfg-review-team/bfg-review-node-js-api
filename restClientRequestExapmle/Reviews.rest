@@ -1,0 +1,13 @@
+POST http://localhost:5000/review HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "UserID": 3,
+    "Title":"Reviewdeneme",
+    "MovieId": 1,
+    "MessageText": "Reviewdeneme-Text",
+    "ReviewLike": 1,
+    "ReviewDislike": 3,
+    "CreatedDate": "01-01-2022"
+}
