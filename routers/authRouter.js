@@ -1,22 +1,18 @@
 const UserTrancactions = require("../database/userTransaction");
-const userTrancactions = new UserTrancactions();
 const ReviewTrancactions = require("../database/reviewTransaction")
+const MessageTrancactions = require("../database/messageTransaction")
+const userTrancactions = new UserTrancactions();
 const reviewTransactions = new ReviewTrancactions()
+const messageTransactions = new MessageTrancactions()
 const router = require("express")();
 const jwt = require("jsonwebtoken");
 const verifyToken = require("../middleware/verifyToken");
-const { query } = require("express");
-const { queryAsync } = require("fadab-mysql-helper");
 
 router.post("/login", async (req, res) => {
     const user = await userTrancactions.findOneAsync({
     Email: req.body.Email,
     Password: req.body.Pasword,
 });
-
-  //delete user["Pasword"]
-  //Yorumsatirideneme
-
     if (!user) {
     res.status(400).json("Kulşlanici adi ya da şifre ad kontrol ediniz");
     return;
@@ -63,6 +59,12 @@ router.put("/user", verifyToken, async (req, res) => {
 
 router.get("/user/reviews", verifyToken, async (req, res) => {
     const results = await reviewTransactions.getUserReviews(
+        Object.assign(req.body)
+    );
+    res.json(results);
+});
+router.get("/user/messages", verifyToken, async (req, res) => {
+    const results = await messageTransactions.getUserMessages(
         Object.assign(req.body)
     );
     res.json(results);

@@ -18,7 +18,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0
 content-type: application/json
 
 {
-    "UserId": 1
+    "UserId": 3
 }
 ###
 POST http://localhost:5000/message HTTP/1.1

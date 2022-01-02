@@ -1,7 +1,6 @@
 const MessageTrancactions = require("../database/MessageTransaction")
 const MessageTransactions = new MessageTrancactions()
 const router  = require("express")();
-const jwt = require("jsonwebtoken");
 const verifyToken = require("../middleware/verifyToken");
 
 router.get("/message", verifyToken, async (req, res) => {
