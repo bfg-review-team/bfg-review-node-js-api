@@ -9,14 +9,14 @@ const { queryAsync } = require("fadab-mysql-helper");
 router.post("/login", async (req, res) => {
     const user = await userTrancactions.findOneAsync({
     Email: req.body.Email,
-    Pasword: req.body.Pasword,
+    Password: req.body.Pasword,
 });
 
   //delete user["Pasword"]
   //Yorumsatirideneme
 
     if (!user) {
-    res.status(400).json("Kulşlanıcı adı ya da şifre adı kontrol ediniz");
+    res.status(400).json("Kulşlanici adi ya da şifre ad kontrol ediniz");
     return;
     }
     var token = jwt.sign({ PersonID: user.PersonID }, "secret", {
@@ -34,6 +34,20 @@ router.get("/user", verifyToken, async (req, res) => {
 
 router.post("/user", verifyToken, async (req, res) => {
     const users = await userTrancactions.addUser(
+    Object.assign(req.body)    
+    );
+    res.json(users);
+});
+
+router.delete("/user", verifyToken, async (req, res) => {
+    const users = await userTrancactions.deleteUser(
+    Object.assign(req.body)    
+    );
+    res.json(users);
+});
+
+router.put("/user", verifyToken, async (req, res) => {
+    const users = await userTrancactions.updateUser(
     Object.assign(req.body)    
     );
     res.json(users);

@@ -3,7 +3,7 @@ const { FadabHelper , queryAsync, insertAsync } = require("fadab-mysql-helper");
 class UserTrancactions extends FadabHelper{
     constructor() {
         super();
-        this.baseTable = "Person";
+        this.baseTable = "Users";
     }
     getAllUser() {
         console.log('CallGetallusers!')
@@ -12,22 +12,22 @@ class UserTrancactions extends FadabHelper{
     getUser(values) {
         const body_data = [values.UserName,values.Pasword]
         console.log('Call Getuser!')
-        return queryAsync("Select * from vwUser Where UserName= ? And Pasword = ? ",body_data)
+        return queryAsync("SELECT * FROM Users WHERE UserName= ? And Password = ? ",body_data)
     }
     addUser(values) {
-        const body_data = [values.Name,values.Surname,values.Email,values.UserName,values.Pasword]
+        const body_data = [values.UserName,values.Filmname,values.LastName,values.Email,values.Password,values.AvatarUrl]
         console.log('CallAddNewUser!')
-        return queryAsync(`CALL AddNewUser(?,?,?,?,?)`,body_data)   
+        return queryAsync("INSERT INTO Users (UserName,FilmName,LastName,Email,Password,AvatarUrl) VALUES (?,?,?,?,?,?) ",body_data)   
     }
     deleteUser(values) {
         const body_data = [values.UserName,values.Email]
         console.log('Deleting This User !')
-        return queryAsync(`CALL DeleteUser (?,?)`,body_data)
+        return queryAsync("DELETE FROM Users WHERE UserName = ? and Email = ? ",body_data)
     }
     updateUser(values) {
-        const body_data = [values.PersonID,values.Email]
+        const body_data = [values.UserName,values.Filmname,values.LastName,values.Email,values.Password,values.AvatarUrl,values.Id]
         console.log("Updating was successfully")
-        return queryAsync(`CALL UpdateUser (?,?)`,body_data)
+        return queryAsync("UPDATE Users SET UserName = ?, FilmName = ?, LastName = ?, Email = ?, Password = ?, AvatarUrl = ? WHERE Id = ?",body_data)
     }
     getAllUserMovies(value) {
         console.log('CallGetallusermovies!')

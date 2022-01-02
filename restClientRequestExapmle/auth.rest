@@ -7,39 +7,66 @@ POST  http://localhost:5000/login HTTP/1.1
 content-type: application/json
 
 {
-    "Email": "oaktan@gmail.com",
-    "Pasword":"1234"
+    "Email": "Firsttry-email",
+    "Pasword":"firsttry"
 }
 
 ###
 
 POST http://localhost:5000/user HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
-    "Name":"apicalldeneme",
-    "Surname":"apicalldeneme",
+    "UserName":"apicalldeneme",
+    "Filmname":"apicalldeneme",
+    "LastName":"apicalldeneme",
     "Email": "apicalldeneme@gmail.com",
-    "UserName":"apicalldeneme", 
-    "Pasword": "apicalldeneme123"
+    "Password": "apicalldeneme123",
+    "AvatarUrl":"exampleurl.com"
 }
 
 ###
 
 GET http://localhost:5000/user HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
-    "UserName":"oguz", 
-    "Pasword": "1234"
+    "UserName":"Firsttry", 
+    "Pasword": "firsttry"
+}
+###
+
+DELETE http://localhost:5000/user HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "UserName":"apicalldeneme", 
+    "Email": "apicalldeneme@gmail.com"
+}
+
+###
+
+PUT http://localhost:5000/user HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
+content-type: application/json
+
+{
+    "Id": 3 ,
+    "UserName":"apicalupdate",
+    "Filmname":"apicalldeneme",
+    "LastName":"apicalupdate",
+    "Email": "apicalldeneme@gmail.com",
+    "Password": "apicalldeneme123",
+    "AvatarUrl":"exampleurl.com"
 }
 
 ###
 
 GET http://localhost:5000/user/movies HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
@@ -49,7 +76,7 @@ content-type: application/json
 ###
 
 POST  http://localhost:5000/user/movies HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
@@ -69,7 +96,7 @@ content-type: application/json
 ###
 
 GET http://localhost:5000/user/series HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
@@ -79,7 +106,7 @@ content-type: application/json
 ###
 
 POST  http://localhost:5000/user/series HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
@@ -99,7 +126,7 @@ content-type: application/json
 ###
 
 POST http://localhost:5000/user/delete HTTP/1.1 HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
@@ -110,7 +137,7 @@ content-type: application/json
 ###
 
 POST http://localhost:5000/user/update HTTP/1.1 HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
 
 {
@@ -121,5 +148,5 @@ content-type: application/json
 ###
 
 GET http://localhost:5000/user/all/users HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQZXJzb25JRCI6MTAsImlhdCI6MTYxMTY2NTAzNywiZXhwIjoxNjEyODc0NjM3fQ.1awyRnGvQnkMd2mGO4VEXEbkH0ZMgT0p8tzG-0P8nKY
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
 content-type: application/json
