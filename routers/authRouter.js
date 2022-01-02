@@ -31,6 +31,12 @@ router.get("/user", verifyToken, async (req, res) => {
     );
     res.json(users);
 });
+router.get("/userAll", verifyToken, async (req, res) => {
+    const users = await userTrancactions.getAllUser(
+    req.body
+    );
+    res.json(users);
+});
 
 router.post("/user", verifyToken, async (req, res) => {
     const users = await userTrancactions.addUser(
@@ -53,7 +59,7 @@ router.put("/user", verifyToken, async (req, res) => {
     res.json(users);
 });
 
-router.get("/user/movies", verifyToken, async (req, res) => {
+/*router.get("/user/movies", verifyToken, async (req, res) => {
     const results = await userTrancactions.getAllUserMovies(
         Object.assign(req.body)
     );
@@ -100,6 +106,6 @@ router.get("/user/all/users", verifyToken, async (req, res) => {
     req.body
     );
     res.json(users[0]);
-});
+});*/
 
 module.exports = router;
