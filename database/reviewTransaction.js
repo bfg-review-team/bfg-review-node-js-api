@@ -51,6 +51,22 @@ class ReviewTrancactions extends FadabHelper{
         console.log("Updating review was successfully")
         return queryAsync("UPDATE Reviews SET UserId = ?, Title = ?, MovieId = ?, MessageText = ?, ReviewLike = ?, ReviewDislike = ?, CreatedDate = ? WHERE Id = ?",body_data)
     }
+    updateReviewLike(values) {
+        const body_data = [
+            values.ReviewLike,
+            values.Id
+        ]
+        console.log("Updating review was successfully")
+        return queryAsync("UPDATE Reviews SET ReviewLike = ? WHERE Id = ?",body_data)
+    }
+    updateReviewDislike(values) {
+        const body_data = [
+            values.ReviewDislike,
+            values.Id
+        ]
+        console.log("Updating review was successfully")
+        return queryAsync("UPDATE Reviews SET ReviewDislike = ? WHERE Id = ?",body_data)
+    }
 }
 
 module.exports = ReviewTrancactions;

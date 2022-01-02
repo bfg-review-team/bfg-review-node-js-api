@@ -1,5 +1,7 @@
 const UserTrancactions = require("../database/userTransaction");
 const userTrancactions = new UserTrancactions();
+const ReviewTrancactions = require("../database/reviewTransaction")
+const reviewTransactions = new ReviewTrancactions()
 const router = require("express")();
 const jwt = require("jsonwebtoken");
 const verifyToken = require("../middleware/verifyToken");
@@ -59,13 +61,13 @@ router.put("/user", verifyToken, async (req, res) => {
     res.json(users);
 });
 
-/*router.get("/user/movies", verifyToken, async (req, res) => {
-    const results = await userTrancactions.getAllUserMovies(
+router.get("/user/reviews", verifyToken, async (req, res) => {
+    const results = await reviewTransactions.getUserReviews(
         Object.assign(req.body)
     );
-    res.json(results[0]);
+    res.json(results);
 });
-
+/*
 router.post("/user/movies", verifyToken, async (req, res) => {
     const results = await userTrancactions.addUserMovie(
         Object.assign(req.body)
