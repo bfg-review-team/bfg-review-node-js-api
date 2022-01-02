@@ -10,6 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(require('./routers/authRouter'));
 app.use(require('./routers/reviewRouter'));
+app.use(require('./routers/messageRouter'));
 
 app.get('/',(req,res) =>{
     res.json("Auth Example Project2");
