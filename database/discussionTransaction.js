@@ -7,7 +7,7 @@ class DiscussionTrancactions extends FadabHelper{
     }
     getAllDiscussions() {
         console.log('CallGetallDiscussions!')
-        return queryAsync("SELECT * FROM Discussions").catch()
+        return queryAsync("SELECT * FROM Discussions").catch(e=>{console.log(e)})
     }
     getDiscussion(values) {
         const body_data = [values.Id]
