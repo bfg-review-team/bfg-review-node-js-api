@@ -23,9 +23,9 @@ router.post("/login", async (req, res) => {
     }
     var token = jwt.sign({ PersonID: user.PersonID }, "secret", {
     expiresIn: "14d",
-    });
+    }).catch();
     res.json({ user, token });
-});
+}).catch();
 
 router.get("/user", verifyToken, async (req, res) => {
     const users = await userTrancactions.getUser(
