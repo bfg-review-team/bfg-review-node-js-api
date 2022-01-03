@@ -25,7 +25,7 @@ router.post("/login", async (req, res) => {
     expiresIn: "14d",
     }).catch();
     res.json({ user, token });
-}).catch();
+});
 
 router.get("/user", verifyToken, async (req, res) => {
     const users = await userTrancactions.getUser(
