@@ -40,7 +40,7 @@ router.get("/userAll", verifyToken, async (req, res) => {
     res.json(users);
 });
 
-router.post("/user", verifyToken, async (req, res) => {
+router.post("/user", async (req, res) => {
     const users = await userTrancactions.addUser(
     Object.assign(req.body)    
     );
