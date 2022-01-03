@@ -12,7 +12,7 @@ router.get("/discussion", verifyToken, async (req, res) => {
 router.get("/discussionAll", verifyToken, async (req, res) => {
     const results = await discussionTransactions.getAllDiscussions(
     req.body
-    );
+    ).catch();
     res.json(results);
 });
 
