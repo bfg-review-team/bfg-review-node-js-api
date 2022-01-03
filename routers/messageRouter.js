@@ -15,6 +15,12 @@ router.get("/messagesAll", verifyToken, async (req, res) => {
     );
     res.json(results);
 });
+router.get("/DiscussionMessages", verifyToken, async (req, res) => {
+    const results = await MessageTransactions.getDiscussionMessages(
+    req.body
+    );
+    res.json(results);
+});
 
 router.post("/message", verifyToken, async (req, res) => {
     const results = await MessageTransactions.addMessage(

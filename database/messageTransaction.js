@@ -19,6 +19,11 @@ class MessageTrancactions extends FadabHelper{
         console.log('Call GetUserMessage!')
         return queryAsync("SELECT * FROM Messages WHERE UserId=? ",body_data)
     }
+    getDiscussionMessages(values) {
+        const body_data = [values.DiscussionId]
+        console.log('Call GetDiscussionMessage!')
+        return queryAsync("SELECT * FROM Messages WHERE DiscussionId=? ",body_data)
+    }
     addMessage(values) {
         const body_data = [
             values.UserId,
