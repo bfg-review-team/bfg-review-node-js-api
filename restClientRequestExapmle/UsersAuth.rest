@@ -8,7 +8,7 @@ content-type: application/json
 
 {
     "Email": "Firsttry-email",
-    "Pasword":"firsttry"
+    "Password":"firsttry"
 }
 
 ###
@@ -18,7 +18,7 @@ content-type: application/json
 
 {
     "UserName":"apicalldenemeTOKENSIZ",
-    "Filmname":"apicalldenemeTOKENSIZ",
+    "FirstName":"apicalldenemeTOKENSIZ",
     "LastName":"apicalldenemeTOKENSIZ",
     "Email": "apicalldenemeTOKENSIZ@gmail.com",
     "Password": "apicalldeneme123",
@@ -59,7 +59,7 @@ content-type: application/json
 {
     "Id": 3 ,
     "UserName":"apicalupdate",
-    "Filmname":"apicalldeneme",
+    "FirstName":"apicalldeneme",
     "LastName":"apicalupdate",
     "Email": "apicalldeneme@gmail.com",
     "Password": "apicalldeneme123",
