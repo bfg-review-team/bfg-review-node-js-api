@@ -11,7 +11,7 @@ class ListTrancactions extends FadabHelper {
   }
   getList(Id) {
     console.log("Call GetList!");
-    return queryAsync("SELECT * FROM Lists WHERE Id=? ", [Id]);
+    return queryAsync("SELECT * FROM Lists WHERE Id=? ", Id);
   }
   getUserLists(values) {
     const body_data = [values.UserId];
@@ -33,7 +33,7 @@ class ListTrancactions extends FadabHelper {
   }
   deleteList(Id) {
     console.log("Deleting This List !");
-    return queryAsync("DELETE FROM Lists WHERE Id = ? ", [Id]);
+    return queryAsync("DELETE FROM Lists WHERE Id = ? ", Id);
   }
   updateList(values) {
     const body_data = [
