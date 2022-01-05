@@ -11,7 +11,7 @@ class UserTrancactions extends FadabHelper {
   }
   getUser(Id) {
     console.log("Call Getuser!", Id);
-    return queryAsync("SELECT * FROM Users WHERE Id = ? ", [Id]);
+    return queryAsync("SELECT * FROM Users WHERE Id = ? ", Id);
   }
   addUser(values) {
     const body_data = [
