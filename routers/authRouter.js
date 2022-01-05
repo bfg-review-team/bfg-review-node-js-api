@@ -39,8 +39,8 @@ router.post("/user", async (req, res) => {
   res.json(users);
 });
 
-router.delete("/user", verifyToken, async (req, res) => {
-  const users = await userTrancactions.deleteUser(Object.assign(req.body));
+router.delete("/user/:Id", verifyToken, async (req, res) => {
+  const users = await userTrancactions.deleteUser(req.params.Id);
   res.json(users);
 });
 

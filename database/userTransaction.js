@@ -28,13 +28,9 @@ class UserTrancactions extends FadabHelper {
       body_data
     );
   }
-  deleteUser(values) {
-    const body_data = [values.UserName, values.Email];
+  deleteUser(Id) {
     console.log("Deleting This User !");
-    return queryAsync(
-      "DELETE FROM Users WHERE UserName = ? and Email = ? ",
-      body_data
-    );
+    return queryAsync("DELETE FROM Users WHERE Id = ? ", Id);
   }
   updateUser(values) {
     const body_data = [
