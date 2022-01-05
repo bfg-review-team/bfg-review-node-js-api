@@ -41,7 +41,7 @@ class MessageTrancactions extends FadabHelper {
   }
   deleteMessage(Id) {
     console.log("Deleting This Message !");
-    return queryAsync("DELETE FROM Messages WHERE Id = ? ", [Id]);
+    return queryAsync("DELETE FROM Messages WHERE Id = ? ", Id);
   }
   updateMessage(values) {
     const body_data = [
