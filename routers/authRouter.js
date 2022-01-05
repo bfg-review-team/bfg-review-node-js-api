@@ -29,10 +29,6 @@ router.post("/login", async (req, res) => {
   res.json({ user, token });
 });
 
-router.get("/user", verifyToken, async (req, res) => {
-  const users = await userTrancactions.getUser(req.body);
-  res.json(users);
-});
 router.get("/userAll", verifyToken, async (req, res) => {
   const users = await userTrancactions.getAllUser(req.body);
   res.json(users);
@@ -74,6 +70,10 @@ router.get("/user/discussions", verifyToken, async (req, res) => {
 router.get("/user/lists", verifyToken, async (req, res) => {
   const results = await listsTransactions.getUserLists(Object.assign(req.body));
   res.json(results);
+});
+router.get("/user/:Id", verifyToken, async (req, res) => {
+  const users = await userTrancactions.getUser(req.params.Id);
+  res.json(users);
 });
 
 module.exports = router;
