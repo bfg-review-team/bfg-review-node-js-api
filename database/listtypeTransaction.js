@@ -11,7 +11,7 @@ class ListTypeTrancactions extends FadabHelper {
   }
   getListType(Id) {
     console.log("Call GetListType!");
-    return queryAsync("SELECT * FROM ListType WHERE Id=? ", [Id]);
+    return queryAsync("SELECT * FROM ListType WHERE Id=? ", Id);
   }
   addListType(values) {
     const body_data = [values.TypeName];
@@ -20,7 +20,7 @@ class ListTypeTrancactions extends FadabHelper {
   }
   deleteListType(Id) {
     console.log("Deleting This ListType !");
-    return queryAsync("DELETE FROM ListType WHERE Id = ? ", [Id]);
+    return queryAsync("DELETE FROM ListType WHERE Id = ? ", Id);
   }
   updateListType(values) {
     const body_data = [values.TypeName, values.Id];
