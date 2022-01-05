@@ -13,7 +13,7 @@ class DiscussionTrancactions extends FadabHelper {
   }
   getDiscussion(Id) {
     console.log("Call GetDiscussion!");
-    return queryAsync("SELECT * FROM Discussions WHERE Id=? ", [Id]);
+    return queryAsync("SELECT * FROM Discussions WHERE Id=? ", Id);
   }
   getUserDiscussions(values) {
     const body_data = [values.UserId];
@@ -40,7 +40,7 @@ class DiscussionTrancactions extends FadabHelper {
   }
   deleteDiscussion(Id) {
     console.log("Deleting This Discussion !");
-    return queryAsync("DELETE FROM Discussions WHERE Id = ? ", [Id]);
+    return queryAsync("DELETE FROM Discussions WHERE Id = ? ", Id);
   }
   updateDiscussion(values) {
     const body_data = [
