@@ -40,7 +40,7 @@ class ReviewTrancactions extends FadabHelper {
   }
   deleteReview(Id) {
     console.log("Deleting This Review !");
-    return queryAsync("DELETE FROM Reviews WHERE Id = ? ", [Id]);
+    return queryAsync("DELETE FROM Reviews WHERE Id = ? ", Id);
   }
   updateReview(values) {
     const body_data = [
