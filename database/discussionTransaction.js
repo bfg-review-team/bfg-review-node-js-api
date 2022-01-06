@@ -13,17 +13,16 @@ class DiscussionTrancactions extends FadabHelper {
   }
   getDiscussion(Id) {
     console.log("Call GetDiscussion!");
-    return queryAsync("SELECT * FROM Discussions WHERE Id=? ", Id);
+    return queryAsync(`SELECT * FROM Discussions WHERE Id=${Id}`);
   }
-  getUserDiscussions(values) {
-    const body_data = [values.UserId];
+  getUserDiscussions(userId) {
     console.log("Call GetUserDiscussion!");
-    return queryAsync("SELECT * FROM Discussions WHERE UserId=? ", body_data);
+    return queryAsync(`SELECT * FROM Discussions WHERE UserId=${userId}`);
   }
-  getMovieDiscussions(values) {
-    const body_data = [values.MovieId];
+  getMovieDiscussions(movieId) {
+
     console.log("Call GetMovieDiscussions!");
-    return queryAsync("SELECT * FROM Discussions WHERE MovieId=? ", body_data);
+    return queryAsync(`SELECT * FROM Discussions WHERE MovieId=${movieId}`);
   }
   addDiscussion(values) {
     const body_data = [

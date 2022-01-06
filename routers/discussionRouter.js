@@ -16,8 +16,8 @@ router.get("/discussionAll", verifyToken, async (req, res) => {
   res.json(results);
 });
 
-router.get("/moviediscussionAll", verifyToken, async (req, res) => {
-  const results = await discussionTransactions.getMovieDiscussions(req.body);
+router.get("/moviediscussionAll/:movieId", verifyToken, async (req, res) => {
+  const results = await discussionTransactions.getMovieDiscussions(req.params.movieId);
   res.json(results);
 });
 
