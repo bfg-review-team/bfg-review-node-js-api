@@ -49,26 +49,26 @@ router.put("/user", verifyToken, async (req, res) => {
   res.json(users);
 });
 
-router.get("/user/reviews", verifyToken, async (req, res) => {
+router.get("/user/reviews/:userId", verifyToken, async (req, res) => {
   const results = await reviewTransactions.getUserReviews(
-    Object.assign(req.body)
+    Object.assign(req.params.userId)
   );
   res.json(results);
 });
-router.get("/user/messages", verifyToken, async (req, res) => {
+router.get("/user/messages/:userId", verifyToken, async (req, res) => {
   const results = await messageTransactions.getUserMessages(
-    Object.assign(req.body)
+    Object.assign(req.params.userId)
   );
   res.json(results);
 });
-router.get("/user/discussions", verifyToken, async (req, res) => {
+router.get("/user/discussions/:userId", verifyToken, async (req, res) => {
   const results = await discussionTransactions.getUserDiscussions(
-    Object.assign(req.body)
+    Object.assign(req.params.userId)
   );
   res.json(results);
 });
-router.get("/user/lists", verifyToken, async (req, res) => {
-  const results = await listsTransactions.getUserLists(Object.assign(req.body));
+router.get("/user/lists/:userId", verifyToken, async (req, res) => {
+  const results = await listsTransactions.getUserLists(Object.assign(req.params.userId));
   res.json(results);
 });
 router.get("/user/:Id", verifyToken, async (req, res) => {
