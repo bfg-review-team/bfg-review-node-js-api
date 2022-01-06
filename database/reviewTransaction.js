@@ -15,12 +15,11 @@ class ReviewTrancactions extends FadabHelper {
   }
   getUserReviews(UserId) {
     console.log("Call GetUserReview!");
-    return queryAsync("SELECT * FROM Reviews WHERE UserId=? ", UserId);
+    return queryAsync(`SELECT * FROM Reviews WHERE UserId=${UserId}` );
   }
-  getMovieReviews(values) {
-    const body_data = [values.MovieId];
+  getMovieReviews(movieId) {
     console.log("Call GetUserReview!");
-    return queryAsync("SELECT * FROM Reviews WHERE MovieId=? ", body_data);
+    return queryAsync("SELECT * FROM Reviews WHERE MovieId=? ", movieId);
   }
   addReview(values) {
     const body_data = [

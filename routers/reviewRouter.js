@@ -12,8 +12,8 @@ router.get("/reviewAll", verifyToken, async (req, res) => {
   res.json(results);
 });
 
-router.get("/movieReviewAll", verifyToken, async (req, res) => {
-  const results = await reviewTransactions.getMovieReviews(req.body);
+router.get("/movieReviewAll/:movieId", verifyToken, async (req, res) => {
+  const results = await reviewTransactions.getMovieReviews(req.params.movieId);
   res.json(results);
 });
 
