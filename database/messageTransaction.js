@@ -13,17 +13,14 @@ class MessageTrancactions extends FadabHelper {
     console.log("Call GetMessage!");
     return queryAsync("SELECT * FROM Messages WHERE Id=? ", Id);
   }
-  getUserMessages(values) {
-    const body_data = [values.UserId];
+  getUserMessages(userID) {
     console.log("Call GetUserMessage!");
-    return queryAsync("SELECT * FROM Messages WHERE UserId=? ", body_data);
+    return queryAsync(`SELECT * FROM Messages WHERE UserId=${userID}` );
   }
-  getDiscussionMessages(values) {
-    const body_data = [values.DiscussionId];
+  getDiscussionMessages(discussionId) {
     console.log("Call GetDiscussionMessage!");
     return queryAsync(
-      "SELECT * FROM Messages WHERE DiscussionId=? ",
-      body_data
+      `SELECT * FROM Messages WHERE DiscussionId=${discussionId} `
     );
   }
   addMessage(values) {

@@ -11,8 +11,8 @@ router.get("/messagesAll", verifyToken, async (req, res) => {
   const results = await MessageTransactions.getAllMessages(req.body);
   res.json(results);
 });
-router.get("/DiscussionMessages", verifyToken, async (req, res) => {
-  const results = await MessageTransactions.getDiscussionMessages(req.body);
+router.get("/DiscussionMessages/:discussionId", verifyToken, async (req, res) => {
+  const results = await MessageTransactions.getDiscussionMessages(req.params.discussionId);
   res.json(results);
 });
 
