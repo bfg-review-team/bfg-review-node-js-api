@@ -7,7 +7,7 @@ router.get("/discussion/:Id", verifyToken, async (req, res) => {
   const results = await discussionTransactions.getDiscussion(req.params.Id);
   res.json(results);
 });
-router.get("/discussionAll", verifyToken, async (req, res) => {
+router.get("/discussionAll", async (req, res) => {
   const results = await discussionTransactions
     .getAllDiscussions(req.body)
     .catch((e) => {
