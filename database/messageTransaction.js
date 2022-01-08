@@ -20,7 +20,7 @@ class MessageTrancactions extends FadabHelper {
   getDiscussionMessages(discussionId) {
     console.log("Call GetDiscussionMessage!");
     return queryAsync(
-      `SELECT * FROM Messages WHERE DiscussionId=${discussionId} `
+      `SELECT * FROM MessagesUser WHERE DiscussionId=${discussionId} `
     );
   }
   addMessage(values) {
