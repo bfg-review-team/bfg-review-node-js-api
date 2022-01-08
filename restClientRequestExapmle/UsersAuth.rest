@@ -1,7 +1,3 @@
-GET  http://localhost:5000 HTTP/1.1
-content-type: application/json
-
-###
 
 POST  http://localhost:5000/login HTTP/1.1
 content-type: application/json
@@ -25,37 +21,4 @@ content-type: application/json
     "AvatarUrl":"exampleurl.com"
 }
 
-###
-GET http://localhost:5000/userAll HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
-content-type: application/json
 
-###
-
-DELETE http://localhost:5000/user/1 HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
-content-type: application/json
-
-
-###
-
-PUT http://localhost:5000/user HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
-content-type: application/json
-
-{
-    "Id": 3 ,
-    "UserName":"apicalupdate",
-    "FirstName":"apicalldeneme",
-    "LastName":"apicalupdate",
-    "Email": "apicalldeneme@gmail.com",
-    "Password": "apicalldeneme123",
-    "AvatarUrl":"exampleurl.com"
-}
-
-###
-
-
-GET http://localhost:5000/user/1 HTTP/1.1
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDExMzU0NDQsImV4cCI6MTY0MjM0NTA0NH0.ZK2gSvYvQNzhoDlTFR-E35U1XVqxDpJxGkq1gv6ddlg
-content-type: application/json
