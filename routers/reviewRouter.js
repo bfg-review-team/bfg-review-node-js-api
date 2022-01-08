@@ -32,4 +32,11 @@ router.delete("/review/:Id", verifyToken, async (req, res) => {
   res.json(results);
 });
 
+router.get("/user/reviews/:userId", verifyToken, async (req, res) => {
+  const results = await reviewTransactions.getUserReviews(
+    Object.assign(req.params.userId)
+  );
+  res.json(results);
+});
+
 module.exports = router;
