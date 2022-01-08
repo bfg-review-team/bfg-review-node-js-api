@@ -7,7 +7,7 @@ class ReviewTrancactions extends FadabHelper {
   }
   getAllReviews() {
     console.log("CallGetallReviews!");
-    return queryAsync("SELECT * FROM Reviews");
+    return queryAsync("SELECT * FROM Reviews R LEFT JOIN Users U on R.UserId=U.Id ");
   }
   getReview(Id) {
     console.log("Call GetReview!");
@@ -19,7 +19,7 @@ class ReviewTrancactions extends FadabHelper {
   }
   getMovieReviews(movieId) {
     console.log("Call GetUserReview!");
-    return queryAsync("SELECT * FROM Reviews WHERE MovieId=? ", movieId);
+    return queryAsync("SELECT * FROM ReviewUser WHERE MovieId=? ", movieId);
   }
   addReview(values) {
     const body_data = [
