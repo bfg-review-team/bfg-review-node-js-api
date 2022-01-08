@@ -1,6 +1,6 @@
 const { FadabHelper, queryAsync, insertAsync } = require("fadab-mysql-helper");
 
-class UserTrancactions extends FadabHelper {
+class UserTrancactions  extends FadabHelper{
   constructor() {
     super();
     this.baseTable = "Users";
@@ -47,6 +47,16 @@ class UserTrancactions extends FadabHelper {
       "UPDATE Users SET UserName = ?, FirstName = ?, LastName = ?, Email = ?, Password = ?, AvatarUrl = ? WHERE Id = ?",
       body_data
     );
+  }
+
+  getUserName(userName) {
+    console.log("Call GetUserName!", userName);
+    return queryAsync("SELECT * FROM Users WHERE UserName = ? ", userName);
+  }
+
+  getEmail(eMail) {
+    console.log("Call GetUserEmail!", eMail);
+    return queryAsync("SELECT * FROM Users WHERE Email = ? ", eMail);
   }
 }
 
