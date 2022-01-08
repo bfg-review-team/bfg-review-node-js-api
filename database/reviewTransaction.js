@@ -9,7 +9,7 @@ class ReviewTrancactions extends FadabHelper {
     console.log("CallGetallReviews!");
     return queryAsync("SELECT * FROM Reviews R LEFT JOIN Users U on R.UserId=U.Id ");
   }
-  getReview(Id) {
+ getReview(Id) {
     console.log("Call GetReview!");
     return queryAsync("SELECT * FROM Reviews WHERE Id=? ", [Id]);
   }
