@@ -14,6 +14,7 @@ app.use(require('./routers/messageRouter'));
 app.use(require('./routers/discussionRouter'));
 app.use(require('./routers/listtypeRouter'));
 app.use(require('./routers/listsRouter'));
+app.use(require('./routers/userRouter'));
 //AutoDeployTest2
 app.get('/',(req,res) =>{
     res.json("Auth Example Project2");
