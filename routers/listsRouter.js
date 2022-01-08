@@ -31,5 +31,8 @@ router.delete("/list/:Id", verifyToken, async (req, res) => {
   const results = await listsTransactions.deleteList(req.params.Id);
   res.json(results);
 });
-
+router.get("/user/lists/:userId", verifyToken, async (req, res) => {
+  const results = await listsTransactions.getUserLists(Object.assign(req.params.userId));
+  res.json(results);
+});
 module.exports = router;
