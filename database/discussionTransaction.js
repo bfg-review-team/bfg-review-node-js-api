@@ -22,7 +22,7 @@ class DiscussionTrancactions extends FadabHelper {
   getMovieDiscussions(movieId) {
 
     console.log("Call GetMovieDiscussions!");
-    return queryAsync(`SELECT * FROM Discussions WHERE MovieId=${movieId}`);
+    return queryAsync(`SELECT * FROM DiscussionUser WHERE MovieId=${movieId}`);
   }
   addDiscussion(values) {
     const body_data = [
