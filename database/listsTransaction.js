@@ -5,6 +5,8 @@ class ListTrancactions extends FadabHelper {
     super();
     this.baseTable = "Lists";
   }
+
+////////////////
   getAllLists() {
     console.log("CallGetallLists!");
     return queryAsync("SELECT * FROM Lists");
@@ -13,16 +15,19 @@ class ListTrancactions extends FadabHelper {
     console.log("Call GetList!");
     return queryAsync("SELECT * FROM Lists WHERE Id=? ", Id);
   }
-  getUserLists(values) {
-    const body_data = [values.UserId];
+//////////////
+
+  getUserLists(UserId,typeNumber) {
     console.log("Call GetUserList!");
-    return queryAsync("SELECT * FROM Lists WHERE UserId=? ", body_data);
+    return queryAsync(`SELECT * FROM Lists WHERE UserId=${UserId} and ListType = ${typeNumber} `);
   }
+  //////////
   getMovieLists(values) {
     const body_data = [values.MovieId];
     console.log("Call GetMovieList!");
     return queryAsync("SELECT * FROM Lists WHERE MovieId=? ", body_data);
   }
+    //////////
   addList(values) {
     const body_data = [values.ListType, values.UserId, values.MovieId];
     console.log("CallAddNewList!");

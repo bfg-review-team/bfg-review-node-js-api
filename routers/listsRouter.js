@@ -7,13 +7,13 @@ router.get("/list/:Id", verifyToken, async (req, res) => {
   const results = await listsTransactions.getList(req.params.Id);
   res.json(results);
 });
-router.get("/listsAll/:Id", verifyToken, async (req, res) => {
-  const results = await listsTransactions.getAllLists(req.params.Id);
+router.get("/listsAll", verifyToken, async (req, res) => {
+  const results = await listsTransactions.getAllLists(req.body);
   res.json(results);
 });
 
-router.get("/movieListsAll", verifyToken, async (req, res) => {
-  const results = await listsTransactions.getMovieLists(req.body);
+router.get("/userList/:userId/:typeNumber", verifyToken, async (req, res) => {
+  const results = await listsTransactions.getUserLists(req.params.userId,req.params.typeNumber);
   res.json(results);
 });
 
