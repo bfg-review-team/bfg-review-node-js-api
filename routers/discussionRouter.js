@@ -35,5 +35,11 @@ router.delete("/discussion/:Id", verifyToken, async (req, res) => {
   const results = await discussionTransactions.deleteDiscussion(req.params.Id);
   res.json(results);
 });
+router.get("/user/discussions/:userId", verifyToken, async (req, res) => {
+  const results = await discussionTransactions.getUserDiscussions(
+    Object.assign(req.params.userId)
+  );
+  res.json(results);
+});
 
 module.exports = router;
