@@ -31,4 +31,11 @@ router.delete("/message/:Id", verifyToken, async (req, res) => {
   res.json(results);
 });
 
+router.get("/user/messages/:userId", verifyToken, async (req, res) => {
+  const results = await MessageTransactions.getUserMessages(
+    Object.assign(req.params.userId)
+  );
+  res.json(results);
+});
+
 module.exports = router;
