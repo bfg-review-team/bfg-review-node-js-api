@@ -27,13 +27,11 @@ class ReviewTrancactions extends FadabHelper {
       values.Title,
       values.MovieId,
       values.MessageText,
-      values.ReviewLike,
-      values.ReviewDislike,
       values.CreatedDate,
     ];
     console.log("CallAddNewReview!");
     return queryAsync(
-      "INSERT INTO Reviews (UserId,Title,MovieId,MessageText,ReviewLike,ReviewDislike,CreatedDate) VALUES (?,?,?,?,?,?,?) ",
+      "INSERT INTO Reviews (UserId,Title,MovieId,MessageText,CreatedDate) VALUES (?,?,?,?,?) ",
       body_data
     );
   }
@@ -47,30 +45,12 @@ class ReviewTrancactions extends FadabHelper {
       values.Title,
       values.MovieId,
       values.MessageText,
-      values.ReviewLike,
-      values.ReviewDislike,
       values.CreatedDate,
       values.Id,
     ];
     console.log("Updating review was successfully");
     return queryAsync(
-      "UPDATE Reviews SET UserId = ?, Title = ?, MovieId = ?, MessageText = ?, ReviewLike = ?, ReviewDislike = ?, CreatedDate = ? WHERE Id = ?",
-      body_data
-    );
-  }
-  updateReviewLike(values) {
-    const body_data = [values.ReviewLike, values.Id];
-    console.log("Updating review was successfully");
-    return queryAsync(
-      "UPDATE Reviews SET ReviewLike = ? WHERE Id = ?",
-      body_data
-    );
-  }
-  updateReviewDislike(values) {
-    const body_data = [values.ReviewDislike, values.Id];
-    console.log("Updating review was successfully");
-    return queryAsync(
-      "UPDATE Reviews SET ReviewDislike = ? WHERE Id = ?",
+      "UPDATE Reviews SET UserId = ?, Title = ?, MovieId = ?, MessageText = ?,  CreatedDate = ? WHERE Id = ?",
       body_data
     );
   }

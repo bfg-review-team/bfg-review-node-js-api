@@ -27,16 +27,6 @@ router.put("/review", verifyToken, async (req, res) => {
   res.json(results);
 });
 
-router.put("/review/like", verifyToken, async (req, res) => {
-  const results = await reviewTransactions.updateReviewLike(req.body);
-  res.json(results);
-});
-
-router.put("/review/dislike", verifyToken, async (req, res) => {
-  const results = await reviewTransactions.updateReviewDislike(req.body);
-  res.json(results);
-});
-
 router.delete("/review/:Id", verifyToken, async (req, res) => {
   const results = await reviewTransactions.deleteReview(req.params.Id);
   res.json(results);
