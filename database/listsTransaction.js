@@ -21,13 +21,7 @@ class ListTrancactions extends FadabHelper {
     console.log("Call GetUserList!");
     return queryAsync(`SELECT * FROM Lists WHERE UserId=${UserId} and ListType = ${typeNumber} `);
   }
-  //////////
-  getMovieLists(values) {
-    const body_data = [values.MovieId];
-    console.log("Call GetMovieList!");
-    return queryAsync("SELECT * FROM Lists WHERE MovieId=? ", body_data);
-  }
-    //////////
+
   addList(values) {
     const body_data = [values.ListType, values.UserId, values.MovieId];
     console.log("CallAddNewList!");
