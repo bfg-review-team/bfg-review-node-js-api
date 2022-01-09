@@ -39,17 +39,17 @@ router.get("/user/:Id", verifyToken, async (req, res) => {
 router.get("/verifyUserName/:UserName", async (req, res) => {
   const userName = await userTrancactions.getUserName(req.params.UserName);
   if(Object.keys(userName).length!==0)
-  res.send({"message":"User name daha önce alınmış!"})
+  res.send({"isExist":true})
   else
-  res.send({"message":"User name kullanılabilir"})
+  res.send({"isExist":false})
 });
 router.get("/verifyEmail/:Email", async (req, res) => {
   const email = await userTrancactions.getEmail(req.params.Email);
   if(Object.keys(email).length!==0){
-    res.send({"message":"Email daha önce alınmış!"})   
+    res.send({"isExist":true})   
   }
   else
-  res.send({"message":"Email kullanılabilir"})
+  res.send({"isExist":false})
 
   
 });
