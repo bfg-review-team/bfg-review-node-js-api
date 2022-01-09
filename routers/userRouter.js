@@ -37,15 +37,18 @@ router.get("/user/:Id", verifyToken, async (req, res) => {
 });
 
 router.get("/verifyUserName/:UserName", verifyToken, async (req, res) => {
-  const users = await userTrancactions.getUserName(req.params.UserName);
-  res.json(users);
+  const userName = await userTrancactions.getUserName(req.params.UserName);
+  if(Object.keys(userName).length!==0)
+  res.send("User name daha önce alınmış!")
+  else
+  res.send("User name kullanılabilir")
 });
 router.get("/verifyEmail/:Email", verifyToken, async (req, res) => {
   const email = await userTrancactions.getEmail(req.params.Email);
   if(Object.keys(email).length!==0)
-  res.send("User name kullanılamaz")
+  res.send("Email daha önce alınmış!")
   else
-  res.send("User name kullanılabilir")
+  res.send("Email kullanılabilir")
   
 });
 module.exports = router;
