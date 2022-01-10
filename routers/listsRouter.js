@@ -35,4 +35,13 @@ router.get("/user/lists/:userId", verifyToken, async (req, res) => {
   const results = await listsTransactions.getUserLists(Object.assign(req.params.userId));
   res.json(results);
 });
+
+router.get("/userList/:userId/:typeNumber/:movieId", verifyToken, async (req, res) => {
+  const results = await listsTransactions.checkUserMovieOnList(req.params.userId,req.params.typeNumber,req.params.movieId);
+  if(Object.keys(results).length!==0){
+    res.send({"isExist":true})   
+  }
+  else
+  res.send({"isExist":false})
+});
 module.exports = router;

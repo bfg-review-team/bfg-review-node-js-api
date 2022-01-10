@@ -47,6 +47,11 @@ class ListTrancactions extends FadabHelper {
       body_data
     );
   }
+  checkUserMovieOnList(UserId,typeNumber,movieId) {
+    console.log("Call checkUserMovieOnList!");
+    return queryAsync(`SELECT * FROM Lists WHERE UserId=${UserId} and ListType = ${typeNumber}   and MovieId = ${movieId}`);
+  }
+  
 }
 
 module.exports = ListTrancactions;
