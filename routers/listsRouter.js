@@ -27,8 +27,8 @@ router.put("/list", verifyToken, async (req, res) => {
   res.json(results);
 });
 
-router.delete("/list/:Id", verifyToken, async (req, res) => {
-  const results = await listsTransactions.deleteList(req.params.Id);
+router.delete("/list/:userId/:typeNumber/:movieId", verifyToken, async (req, res) => {
+  const results = await listsTransactions.deleteList(req.params.userId,req.params.typeNumber,req.params.movieId);
   res.json(results);
 });
 router.get("/user/lists/:userId", verifyToken, async (req, res) => {
