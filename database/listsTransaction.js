@@ -30,9 +30,9 @@ class ListTrancactions extends FadabHelper {
       body_data
     );
   }
-  deleteList(Id) {
+  deleteList(UserId,typeNumber,movieId) {
     console.log("Deleting This List !");
-    return queryAsync("DELETE FROM Lists WHERE Id = ? ", Id);
+    return queryAsync(`DELETE FROM Lists WHERE UserId=${UserId} and ListType = ${typeNumber}   and MovieId = ${movieId}`);
   }
   updateList(values) {
     const body_data = [
